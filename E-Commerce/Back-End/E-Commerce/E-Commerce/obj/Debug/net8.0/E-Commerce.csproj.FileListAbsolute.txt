@@ -274,3 +274,7 @@ C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Comme
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.pdb
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\MailKit.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\MimeKit.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\System.Formats.Asn1.dll

@@ -1,6 +1,8 @@
-﻿using E_Commerce.Models;
+﻿using E_Commerce.DTOs;
+using E_Commerce.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce.Controllers
 {
@@ -23,5 +25,76 @@ namespace E_Commerce.Controllers
             return Ok(category);
 
         }
+
+        [HttpGet("TopSales")]
+        public IActionResult TopSales() {
+            var productTop = _db.OrderItems
+                        .GroupBy(oi => oi.ProductId)  
+                        .Select(group => new
+                        {
+                            ProductId = group.Key,
+                            Count = group.Count()  
+                        })
+                        .OrderByDescending(x => x.Count) 
+                        .Take(5)
+                        .Join(_db.Products,  
+                              g => g.ProductId,
+                              p => p.ProductId,
+                              (g, p) => p)
+                        .ToList();
+
+            return Ok(productTop);
+
+        }
+
+        //[HttpGet("NewArrival")]
+        //public IActionResult NewArrival() { 
+        //    var new = _db.Products.OrderByDescending(l => l.d)
+        //}
+
+        [HttpGet("OffSale")]
+        public IActionResult OffSale() { 
+            var product = _db.Products.OrderByDescending(oi => oi.PriceWithDiscount).Take(5).ToList();
+            return Ok(product);
+        }
+
+        [HttpGet("TopProducts")]
+        public IActionResult TopProducts() {
+            var productsWithRatings = _db.Products
+            .Select(product => new RatingDTO
+            {
+                ProductId = product.ProductId,
+                Name = product.Name,
+                Description = product.Description,
+                Image = product.Image,
+                Price = product.Price,
+                CategoryId = product.CategoryId,
+                Color = product.Color,
+                FlowerColorId = product.FlowerColorId,
+                PriceWithDiscount = product.PriceWithDiscount,
+                // Calculate the average rating from the comments, if there are any
+                rating = _db.Comments
+                          .Where(c => c.ProductId == product.ProductId)
+                          .Average(c => (decimal?)c.Rating) ?? 0 ,// If there are no comments, set the rating to 0
+
+                 ReviewCount = _db.Comments
+                              .Where(c => c.ProductId == product.ProductId)
+                              .Count() // Count number of reviews (comments)
+            })
+            .OrderByDescending(x => x.rating)
+            .Take(5)
+            .ToList();
+
+
+            return Ok(productsWithRatings);
+
+        }
+
+        //[HttpGet("CartNavbar")]
+        //public IActionResult CartNavbar() { 
+        //    var cart
+        //}
+
+
     }
 }
