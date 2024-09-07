@@ -13,8 +13,14 @@ namespace E_Commerce.Controllers
     public class contactUsController : ControllerBase
     {
         private readonly MyDbContext _db;
+        private readonly ILogger<contactUsController> _logger;
 
-        public contactUsController(MyDbContext db) { _db = db; }
+
+        public contactUsController(MyDbContext db, ILogger<contactUsController> logger)
+        {
+            _db = db;
+            _logger = logger;
+        }
 
         [HttpGet("getAllContact")]
         public IActionResult getAllContact() {

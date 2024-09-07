@@ -55,7 +55,7 @@ async function TopSales() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal" onclick="addToCart(${element.productId}, '${element.name}', '${element.price}', '${element.image}')">
                                         <i class="icon-handbag"></i>
                                     </a>
                                 </li>
@@ -119,7 +119,7 @@ async function OffSale() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal" onclick="addToCart(${element.productId}, '${element.name}', '${element.price}', '${element.image}')">
                                         <i class="icon-handbag"></i>
                                     </a>
                                 </li>
@@ -186,7 +186,7 @@ async function TopProducts() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal" onclick="addToCart(${element.productId}, '${element.name}', '${element.price}', '${element.image}')">
                                             <i class="icon-handbag"></i>
                                         </a>
                                     </li>

@@ -278,3 +278,13 @@ C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Comme
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\MailKit.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\MimeKit.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Serilog.Sinks.File.dll

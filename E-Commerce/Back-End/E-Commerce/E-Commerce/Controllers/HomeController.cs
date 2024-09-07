@@ -11,10 +11,13 @@ namespace E_Commerce.Controllers
     public class HomeController : ControllerBase
     {
         private readonly MyDbContext _db;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController (MyDbContext db)
+
+        public HomeController (MyDbContext db, ILogger<HomeController> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         [HttpGet("getAllCategories")]
