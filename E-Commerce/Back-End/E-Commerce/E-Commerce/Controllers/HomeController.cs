@@ -50,10 +50,12 @@ namespace E_Commerce.Controllers
 
         }
 
-        //[HttpGet("NewArrival")]
-        //public IActionResult NewArrival() { 
-        //    var new = _db.Products.OrderByDescending(l => l.d)
-        //}
+        [HttpGet("NewArrival")]
+        public IActionResult NewArrival()
+        {
+            var newProduct = _db.Products.OrderByDescending(l => l.Date).Take(5).ToList();
+            return Ok(newProduct);
+        }
 
         [HttpGet("OffSale")]
         public IActionResult OffSale() { 

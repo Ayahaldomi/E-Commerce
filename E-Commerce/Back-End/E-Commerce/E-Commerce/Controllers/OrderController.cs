@@ -54,5 +54,29 @@ namespace E_Commerce.Controllers
             return Ok(newOrder);
 
         }
+
+        [HttpGet("GetOrdersWithProductsByUser/{userId}")]
+        public IActionResult GetOrdersWithProductsByUser(int userId)
+        {
+            var orders = _db.Orders
+                .Where(o => o.UserId == userId)
+                .Select(o => new
+                {
+                    OrderId = o.OrderId,
+                    Products = o.OrderItems.Select(oi => new
+                    {
+                        ProductId = oi.ProductId,
+                        ProductName = oi.Product.Name,
+                        OrderItemId = oi.OrderItemId
+                    }).ToList()
+                }).ToList();
+
+            if (!orders.Any())
+            {
+                return NotFound("No orders found for this user.");
+            }
+
+            return Ok(orders);
+        }
     }
 }

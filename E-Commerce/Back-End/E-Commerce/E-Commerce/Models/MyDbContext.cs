@@ -43,7 +43,7 @@ public partial class MyDbContext : DbContext
     {
         modelBuilder.Entity<Admin>(entity =>
         {
-            entity.HasKey(e => e.AdminId).HasName("PK__Admin__43AA4141E7AA7061");
+            entity.HasKey(e => e.AdminId).HasName("PK__Admin__43AA41412084091C");
 
             entity.ToTable("Admin");
 
@@ -60,7 +60,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<CartItem>(entity =>
         {
-            entity.HasKey(e => e.CartItemId).HasName("PK__Cart_Ite__3C0E2A444E791AE6");
+            entity.HasKey(e => e.CartItemId).HasName("PK__Cart_Ite__3C0E2A440C1942F4");
 
             entity.ToTable("Cart_Item");
 
@@ -82,7 +82,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B4862512B2");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B48F0257F5");
 
             entity.ToTable("Category");
 
@@ -94,7 +94,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity.HasKey(e => e.CommentId).HasName("PK__Comment__E79576873C299EF6");
+            entity.HasKey(e => e.CommentId).HasName("PK__Comment__E7957687F2668B91");
 
             entity.ToTable("Comment");
 
@@ -119,7 +119,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Contact>(entity =>
         {
-            entity.HasKey(e => e.ContactId).HasName("PK__Contact__024E7A864DD9C56F");
+            entity.HasKey(e => e.ContactId).HasName("PK__Contact__024E7A8601D78938");
 
             entity.ToTable("Contact");
 
@@ -136,7 +136,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Copon>(entity =>
         {
-            entity.HasKey(e => e.CoponId).HasName("PK__Copons__8A47306FE3CEBCBC");
+            entity.HasKey(e => e.CoponId).HasName("PK__Copons__8A47306F5D729ADD");
 
             entity.Property(e => e.CoponId).HasColumnName("copon_id");
             entity.Property(e => e.Amount)
@@ -149,7 +149,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__Orders__46596229BEFAB289");
+            entity.HasKey(e => e.OrderId).HasName("PK__Orders__46596229F4F9590A");
 
             entity.Property(e => e.OrderId).HasColumnName("order_id");
             entity.Property(e => e.Amount)
@@ -173,7 +173,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<OrderItem>(entity =>
         {
-            entity.HasKey(e => e.OrderItemId).HasName("PK__Order_It__483A64F9475B1BEB");
+            entity.HasKey(e => e.OrderItemId).HasName("PK__Order_It__483A64F9037691E9");
 
             entity.ToTable("Order_Item");
 
@@ -182,10 +182,10 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            //entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
-            //    .HasForeignKey(d => d.OrderId)
-            //    .OnDelete(DeleteBehavior.Cascade)
-            //    .HasConstraintName("FK__Order_Ite__order__47DBAE45");
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
+                .HasForeignKey(d => d.OrderId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__Order_Ite__order__47DBAE45");
 
             entity.HasOne(d => d.Product).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.ProductId)
@@ -195,7 +195,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__47027DF5767BE655");
+            entity.HasKey(e => e.ProductId).HasName("PK__Products__47027DF50F4B8AF0");
 
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
@@ -219,7 +219,7 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370FE6655F57");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370FBDC659DD");
 
             entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.Address).HasColumnName("address");

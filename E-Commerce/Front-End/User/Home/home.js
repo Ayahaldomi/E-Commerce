@@ -22,12 +22,116 @@ async function Categories() {
 
 Categories();
 
+
+
+
 function catigoryID(data){
     localStorage.setItem("categoryID", data);
 }
 
 
+async function NewArrival() {
+    debugger;
+    
+    var requist = await fetch('https://localhost:7000/api/Home/NewArrival')
+    var responce = await requist.json();
+
+    var TopSales = document.getElementById('NewArrival');
+
+    responce.forEach(element => {
+
+        TopSales.innerHTML += `
+            <div class="col-12">
+                <div class="ltn__product-item ltn__product-item-4">
+                    <div class="product-img">
+                        <a href="product-details.html"><img src="../img/product/2.png" alt="#"></a>
+                        
+                        <div class="product-badge">
+                            <ul>
+                                <li class="badge-1">Hot</li>
+                            </ul>
+                        </div>
+                        <div class="product-hover-action product-hover-action-3">
+                            <ul>
+                                <li>
+                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                        <i class="icon-magnifier"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal" onclick="addToCart(${element.productId}, '${element.name}', '${element.price}', '${element.image}')">
+                                        <i class="icon-handbag"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                        <i class="icon-shuffle"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        
+                        <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
+                        <div class="product-price">
+                            <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
+                            <del>${element.priceWithDiscount > 0 ? '$' + element.price : ''}</del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        
+    });
+    // After dynamically appending, reinitialize Slick carousel
+    if ($('#NewArrival').hasClass('slick-initialized')) {
+        $('#NewArrival').slick('unslick'); // Destroy existing Slick instance
+    }
+
+    $('#NewArrival').slick({
+        arrows: true,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
+        nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+}
+
+NewArrival();
+
 async function TopSales() {
+    debugger;
     
     var requist = await fetch('https://localhost:7000/api/Home/TopSales')
     var responce = await requist.json();
@@ -68,15 +172,7 @@ async function TopSales() {
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-ratting">
-                            <ul>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                            </ul>
-                        </div>
+                        
                         <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
                         <div class="product-price">
                             <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
@@ -88,11 +184,54 @@ async function TopSales() {
         `
         
     });
+   // After dynamically appending, reinitialize Slick carousel
+   if ($('#TopSales').hasClass('slick-initialized')) {
+    $('#TopSales').slick('unslick'); // Destroy existing Slick instance
+}
+
+$('#TopSales').slick({
+    arrows: true,
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
+    nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 580,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
+    });
 }
 
 TopSales();
 
 async function OffSale() {
+    debugger;
 
     var requist = await fetch('https://localhost:7000/api/Home/OffSale')
     var responce = await requist.json();
@@ -132,15 +271,7 @@ async function OffSale() {
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-ratting">
-                            <ul>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                <li><a href="#"><i class="icon-star"></i></a></li>
-                            </ul>
-                        </div>
+                        
                         <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
                         <div class="product-price">
                             <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
@@ -152,6 +283,48 @@ async function OffSale() {
 
         `
     });
+    // After dynamically appending, reinitialize Slick carousel
+    if ($('#OffSale').hasClass('slick-initialized')) {
+        $('#OffSale').slick('unslick'); // Destroy existing Slick instance
+    }
+
+    $('#OffSale').slick({
+        arrows: true,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
+        nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
     
 }
 
@@ -159,6 +332,7 @@ OffSale();
 
 
 async function TopProducts() {
+    debugger;
 
     var requist = await fetch('https://localhost:7000/api/Home/TopProducts')
     var responce = await requist.json();
@@ -202,7 +376,7 @@ async function TopProducts() {
                             <div class="product-ratting">
                                 <ul>
                                     ${generateStars(element.rating)}  <!-- Dynamically generated stars -->
-                                    <li class="review-total"> <a href="#"> ( ${element.reviewCount} Reviews )</a></li>
+                                    <li class="review-total">  ( ${element.reviewCount} Reviews )</li>
 
                                 </ul>
                             </div>
@@ -216,7 +390,52 @@ async function TopProducts() {
                 </div>
         `
     
-})};
+        
+})
+
+// After dynamically appending, reinitialize Slick carousel
+if ($('#TopProducts').hasClass('slick-initialized')) {
+    $('#TopProducts').slick('unslick'); // Destroy existing Slick instance
+}
+
+$('#TopProducts').slick({
+    arrows: true,
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
+    nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 580,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});
+};
 TopProducts()
 
 function generateStars(rating) {
@@ -228,17 +447,17 @@ function generateStars(rating) {
 
     // Add full stars
     for (let i = 0; i < fullStars; i++) {
-        starsHTML += `<li><a href="#"><i class="fas fa-star"></i></a></li>`; // Full star
+        starsHTML += ` <li><i class="fas fa-star"></i></li>`; // Full star
     }
 
     // Add half star if needed
     if (halfStar) {
-        starsHTML += `<li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>`; // Half star
+        starsHTML += ` <li><i class="fas fa-star-half-alt"></i></li>`; // Half star
     }
 
     // Add empty stars
     for (let i = 0; i < emptyStars; i++) {
-        starsHTML += `<li><a href="#"><i class="far fa-star"></i></a></li>`; // Empty star
+        starsHTML += ` <li><i class="far fa-star"></i></li>`; // Empty star
     }
 
     return starsHTML;

@@ -13,15 +13,15 @@ namespace E_Commerce.Controllers
         private readonly MyDbContext _db;
         private readonly PasswordHasher<User> _passwordHasher;
         private readonly TokenGenerator _tokenGenerator;
-        private readonly ILogger<Users_BassamController> _logger;
+        private readonly EmailService _emailService;
 
-
-        public Users_BassamController(MyDbContext db, PasswordHasher<User> passwordHasher, TokenGenerator tokenGenerator, ILogger<Users_BassamController> logger)
+        public Users_BassamController(MyDbContext db, PasswordHasher<User> passwordHasher, TokenGenerator tokenGenerator, EmailService emailService)
         {
             _db = db;
             _passwordHasher = passwordHasher;
             _tokenGenerator = tokenGenerator;
-            _logger = logger;
+            _emailService = emailService;
+
         }
         [HttpGet]
         public IActionResult getAllUsers()
@@ -72,15 +72,34 @@ namespace E_Commerce.Controllers
         [HttpPost("Google")]
         public IActionResult RegisterationFromGoogle([FromForm] RegisterGoogleDTO model)
         {
-            var user = new User
+            var userfetch = _db.Users.Where(x => x.Email == model.email).FirstOrDefault();
+
+            if (userfetch == null)
             {
-                Name = model.displayName,
-                Email = model.email,
-                Image = model.photoURL,
-            };
-            _db.Users.Add(user);
-            _db.SaveChanges();
-            return Ok(user);
+                var user = new User
+                {
+                    Name = model.displayName,
+                    Email = model.email,
+                    Image = model.photoURL,
+                };
+                _db.Users.Add(user);
+                _db.SaveChanges();
+                return Ok(user);
+            }
+            else
+            {
+                
+                var user = _db.Users.FirstOrDefault(x => x.Email == model.email);
+                if (user == null || !PasswordHasher.VerifyPasswordHash(user.Password, user.PasswordHash, user.PasswordSalt))
+                {
+                    return Unauthorized("Invalid username or password.");
+                }
+
+                // Retrieve roles and generate JWT token
+                var token = _tokenGenerator.GenerateToken(user.Name);
+
+                return Ok(new { Token = token, userID = user.UserId });
+            }
 
         }
         [HttpPost("CreatePassword")]
@@ -98,6 +117,51 @@ namespace E_Commerce.Controllers
             _db.Users.Update(User);
             _db.SaveChanges();
             return Ok(User);
+        }
+
+        [HttpPost("send")]
+        public async Task<IActionResult> SendEmail([FromForm] EmailRequest request)
+        {
+            // Generate OTP
+            var otp = OtpGenerator.GenerateOtp();
+            var user = _db.Users.Where(x => x.Email == request.ToEmail).FirstOrDefault();
+            user.Password = otp;
+            _db.SaveChanges();
+
+            // Create email body including the OTP
+            var emailBody = $"<p>Hello,</p><p>Your OTP code is: <strong>{otp}</strong></p><p>Thank you.</p>";
+            var Subject = "send OTP";
+            // Send email with OTP
+            await _emailService.SendEmailAsync(request.ToEmail, Subject, emailBody);
+
+            return Ok(new { message = "Email sent successfully.", otp, user.UserId }); // Optionally return the OTP for testing
+        }
+        [HttpPost("GetOTP")]
+        public IActionResult GetOTP([FromForm] DTOsOTP request, int id)
+        {
+            var user = _db.Users.Find(id);
+            if (user.Password == request.OTP)
+            {
+
+                return Ok();
+
+
+            }
+            return BadRequest();
+        }
+
+        [HttpPut("editPassword")]
+        public IActionResult EditPassword([FromForm] DTOsEditPassword request, int id)
+        {
+            var user = _db.Users.Find(id);
+            byte[] passwordHash, passwordSalt;
+            PasswordHasher.CreatePasswordHash(request.Password, out passwordHash, out passwordSalt);
+            user.Password = request.Password;
+            user.PasswordSalt = passwordSalt;
+            user.PasswordHash = passwordHash;
+            _db.SaveChanges();
+            return Ok(user);
+
         }
     }
 }

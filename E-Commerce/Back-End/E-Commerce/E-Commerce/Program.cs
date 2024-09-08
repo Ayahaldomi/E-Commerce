@@ -6,15 +6,27 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Register PayPalPaymentService
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// Add services to the container.
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    // Prevent circular references in JSON serialization
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
+    // Optionally, ignore null values in JSON serialization
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
 
 // Add services to the container.
 builder.Services.AddDbContext<MyDbContext>(options =>
@@ -32,6 +44,13 @@ options.AddPolicy("Development", builder =>
 
 
 );
+
+builder.Services.AddTransient<EmailService>(); // Register your EmailService
+builder.Services.AddControllers();
+
+// Add configuration for SMTP settings
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+
 
 builder.Services.AddScoped<PasswordHasher<User>>(); // Register PasswordHasher<User>
 builder.Services.AddSingleton<TokenGenerator>(); // or .AddTransient<TokenGenerator>()

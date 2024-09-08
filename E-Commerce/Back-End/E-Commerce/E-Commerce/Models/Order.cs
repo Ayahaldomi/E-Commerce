@@ -17,9 +17,11 @@ public partial class Order
 
     public string? TransactionId { get; set; }
 
+    public DateOnly? Date { get; set; }
+
     public virtual Copon? Copon { get; set; }
 
-    //public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
     public virtual User? User { get; set; }
 }

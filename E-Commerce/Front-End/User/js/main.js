@@ -398,43 +398,43 @@
         /* --------------------------------------------------------
             16. Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__product-slider-item-four-active').slick({
-            arrows: true,
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
-            nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        dots: true,
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 580,
-                    settings: {
-                        arrows: false,
-                        dots: true,
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
+        // $('.ltn__product-slider-item-four-active').slick({
+        //     arrows: true,
+        //     dots: false,
+        //     infinite: true,
+        //     speed: 300,
+        //     slidesToShow: 4,
+        //     slidesToScroll: 1,
+        //     prevArrow: '<a class="slick-prev"><i class="icon-arrow-left" alt="Arrow Icon"></i></a>',
+        //     nextArrow: '<a class="slick-next"><i class="icon-arrow-right" alt="Arrow Icon"></i></a>',
+        //     responsive: [
+        //         {
+        //             breakpoint: 992,
+        //             settings: {
+        //                 slidesToShow: 3,
+        //                 slidesToScroll: 1
+        //             }
+        //         },
+        //         {
+        //             breakpoint: 768,
+        //             settings: {
+        //                 arrows: false,
+        //                 dots: true,
+        //                 slidesToShow: 2,
+        //                 slidesToScroll: 1
+        //             }
+        //         },
+        //         {
+        //             breakpoint: 580,
+        //             settings: {
+        //                 arrows: false,
+        //                 dots: true,
+        //                 slidesToShow: 2,
+        //                 slidesToScroll: 1
+        //             }
+        //         }
+        //     ]
+        // });
 
 
         /* --------------------------------------------------------

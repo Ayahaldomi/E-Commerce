@@ -38,17 +38,42 @@ async function addToCart(id, name, price, image) {
 
       }
 
+
+
     // Check if a cart exists in localStorage
   var existingCart = localStorage.getItem("cart");
 
   // If cart exists, parse it, else create an empty array
   var cart = existingCart ? JSON.parse(existingCart) : [];
 
-  // Add the new item to the cart
-  cart.push(storeInlocal);
+      // Check if the product already exists in the cart by productId
+      const itemIndex = cart.findIndex(item => item.productId === storeInlocal.productId);
+
+      if (itemIndex !== -1) {
+        // If the product exists, update its quantity
+        cart[itemIndex].quantity += storeInlocal.quantity;
+    } else {
+        // If the product doesn't exist, add it to the cart
+        cart.push(storeInlocal);
+    }
 
   // Save the updated cart back to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
 }
-    
+showAddToCartModal(id, name, price, image)   
+}
+
+function showAddToCartModal(id, name, price, image) {
+    // Update the product image
+    document.getElementById("modal-product-img").src = image;
+    document.getElementById("modal-product-img").alt = name;
+
+    // Update the product name and link
+    document.getElementById("modal-product-name").innerHTML = `<a href="product-details.html?id=${id}">${name}</a>`;
+
+    // Open the modal using Bootstrap's modal method
+    var myModal = new bootstrap.Modal(document.getElementById('add_to_cart_modal'), {
+        keyboard: false
+    });
+    myModal.show();
 }

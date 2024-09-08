@@ -34,6 +34,7 @@ CREATE TABLE Products (
     color NVARCHAR(max),
     flower_color_id INT,
     price_with_discount DECIMAL(10, 2),
+	Date Date,
     FOREIGN KEY (category_id) REFERENCES Category(category_id) ON DELETE CASCADE
 );
 
@@ -60,6 +61,7 @@ CREATE TABLE Orders (
     copon_id INT,
     status NVARCHAR(max),
     transaction_id NVARCHAR(max),
+	Date Date,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (copon_id) REFERENCES copons(copon_id) ON DELETE CASCADE
 );
@@ -121,36 +123,36 @@ VALUES ('Roses', 'roses.png', 'A variety of beautiful roses.'),
        ('Daisies', 'daisies.png', 'Simple yet charming daisies.'),
        ('Sunflowers', 'sunflowers.png', 'Bright and cheerful sunflowers.');
 
-	   INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount) 
-VALUES ('Red Rose Bouquet', 'A bouquet of fresh red roses.', 'red_rose.png', 50.00, 1, 'Red', 1, 45.00),
-       ('White Rose Bouquet', 'A bouquet of elegant white roses.', 'white_rose.png', 55.00, 1, 'White', 2, 50.00),
-       ('Pink Rose Bouquet', 'A bouquet of charming pink roses.', 'pink_rose.png', 60.00, 1, 'Pink', 3, 55.00),
-       ('Yellow Rose Bouquet', 'A bouquet of vibrant yellow roses.', 'yellow_rose.png', 45.00, 1, 'Yellow', 4, 40.00),
-       ('Mixed Rose Bouquet', 'A bouquet of mixed color roses.', 'mixed_rose.png', 70.00, 1, 'Mixed', 5, 65.00);
+	   INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount,Date) 
+VALUES ('Red Rose Bouquet', 'A bouquet of fresh red roses.', 'red_rose.png', 50.00, 1, 'Red', 1, 45.00,'2024-09-07'),
+       ('White Rose Bouquet', 'A bouquet of elegant white roses.', 'white_rose.png', 55.00, 1, 'White', 2, 50.00,'2024-09-07'),
+       ('Pink Rose Bouquet', 'A bouquet of charming pink roses.', 'pink_rose.png', 60.00, 1, 'Pink', 3, 55.00,'2024-09-07'),
+       ('Yellow Rose Bouquet', 'A bouquet of vibrant yellow roses.', 'yellow_rose.png', 45.00, 1, 'Yellow', 4, 40.00,'2024-09-07'),
+       ('Mixed Rose Bouquet', 'A bouquet of mixed color roses.', 'mixed_rose.png', 70.00, 1, 'Mixed', 5, 65.00,'2024-09-07');
 
 
-INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount) 
-VALUES ('Red Tulip Bouquet', 'A bouquet of beautiful red tulips.', 'red_tulip.png', 40.00, 2, 'Red', 1, 35.00),
-       ('Yellow Tulip Bouquet', 'A bouquet of cheerful yellow tulips.', 'yellow_tulip.png', 45.00, 2, 'Yellow', 2, 40.00),
-       ('White Tulip Bouquet', 'A bouquet of elegant white tulips.', 'white_tulip.png', 50.00, 2, 'White', 3, 45.00),
-       ('Pink Tulip Bouquet', 'A bouquet of delightful pink tulips.', 'pink_tulip.png', 60.00, 2, 'Pink', 4, 55.00),
-       ('Mixed Tulip Bouquet', 'A bouquet of mixed color tulips.', 'mixed_tulip.png', 65.00, 2, 'Mixed', 5, 60.00);
+INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount,Date) 
+VALUES ('Red Tulip Bouquet', 'A bouquet of beautiful red tulips.', 'red_tulip.png', 40.00, 2, 'Red', 1, 35.00,'2024-09-07'),
+       ('Yellow Tulip Bouquet', 'A bouquet of cheerful yellow tulips.', 'yellow_tulip.png', 45.00, 2, 'Yellow', 2, 40.00,'2024-09-07'),
+       ('White Tulip Bouquet', 'A bouquet of elegant white tulips.', 'white_tulip.png', 50.00, 2, 'White', 3, 45.00,'2024-09-07'),
+       ('Pink Tulip Bouquet', 'A bouquet of delightful pink tulips.', 'pink_tulip.png', 60.00, 2, 'Pink', 4, 55.00,'2024-09-07'),
+       ('Mixed Tulip Bouquet', 'A bouquet of mixed color tulips.', 'mixed_tulip.png', 65.00, 2, 'Mixed', 5, 60.00,'2024-09-07');
 
 
-INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount) 
-VALUES ('White Daisy Bouquet', 'A bouquet of fresh white daisies.', 'white_daisy.png', 30.00, 3, 'White', 1, 25.00),
-       ('Yellow Daisy Bouquet', 'A bouquet of bright yellow daisies.', 'yellow_daisy.png', 35.00, 3, 'Yellow', 2, 30.00),
-       ('Pink Daisy Bouquet', 'A bouquet of charming pink daisies.', 'pink_daisy.png', 40.00, 3, 'Pink', 3, 35.00),
-       ('Purple Daisy Bouquet', 'A bouquet of elegant purple daisies.', 'purple_daisy.png', 45.00, 3, 'Purple', 4, 40.00),
-       ('Mixed Daisy Bouquet', 'A bouquet of mixed color daisies.', 'mixed_daisy.png', 50.00, 3, 'Mixed', 5, 45.00);
+INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount, Date) 
+VALUES ('White Daisy Bouquet', 'A bouquet of fresh white daisies.', 'white_daisy.png', 30.00, 3, 'White', 1, 25.00,'2024-09-07'),
+       ('Yellow Daisy Bouquet', 'A bouquet of bright yellow daisies.', 'yellow_daisy.png', 35.00, 3, 'Yellow', 2, 30.00,'2024-09-07'),
+       ('Pink Daisy Bouquet', 'A bouquet of charming pink daisies.', 'pink_daisy.png', 40.00, 3, 'Pink', 3, 35.00,'2024-09-07'),
+       ('Purple Daisy Bouquet', 'A bouquet of elegant purple daisies.', 'purple_daisy.png', 45.00, 3, 'Purple', 4, 40.00,'2024-09-07'),
+       ('Mixed Daisy Bouquet', 'A bouquet of mixed color daisies.', 'mixed_daisy.png', 50.00, 3, 'Mixed', 5, 45.00,'2024-09-07');
 
 
-INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount) 
-VALUES ('Single Sunflower', 'A single bright sunflower.', 'single_sunflower.png', 10.00, 4, 'Yellow', 1, 8.00),
-       ('Sunflower Bouquet', 'A bouquet of cheerful sunflowers.', 'sunflower_bouquet.png', 55.00, 4, 'Yellow', 2, 50.00),
-       ('Mini Sunflower', 'A small and cute sunflower.', 'mini_sunflower.png', 8.00, 4, 'Yellow', 3, 6.00),
-       ('Sunflower & Daisy Mix', 'A bouquet of sunflowers and daisies.', 'sunflower_daisy.png', 60.00, 4, 'Mixed', 4, 55.00),
-       ('Sunflower Garden', 'A sunflower arrangement in a pot.', 'sunflower_garden.png', 70.00, 4, 'Yellow', 5, 65.00);
+INSERT INTO Products (name, description, image, price, category_id, color, flower_color_id, price_with_discount,Date) 
+VALUES ('Single Sunflower', 'A single bright sunflower.', 'single_sunflower.png', 10.00, 4, 'Yellow', 1, 8.00,'2024-09-07'),
+       ('Sunflower Bouquet', 'A bouquet of cheerful sunflowers.', 'sunflower_bouquet.png', 55.00, 4, 'Yellow', 2, 50.00,'2024-09-07'),
+       ('Mini Sunflower', 'A small and cute sunflower.', 'mini_sunflower.png', 8.00, 4, 'Yellow', 3, 6.00,'2024-09-07'),
+       ('Sunflower & Daisy Mix', 'A bouquet of sunflowers and daisies.', 'sunflower_daisy.png', 60.00, 4, 'Mixed', 4, 55.00,'2024-09-07'),
+       ('Sunflower Garden', 'A sunflower arrangement in a pot.', 'sunflower_garden.png', 70.00, 4, 'Yellow', 5, 65.00,'2024-09-07');
 
 
 INSERT INTO Cart_Item (product_id, user_id, quantity)
@@ -166,12 +168,12 @@ VALUES ('SUMMER20', 20.00, '2024-09-01', 1),
        ('FALL15', 15.00, '2024-09-15', 1);
 
 
-INSERT INTO Orders (user_id, amount, copon_id, status, transaction_id)
-VALUES (1, 100.00, 1, 'Completed', 'TX001'), (1, 80.00, 2, 'Pending', 'TX002'),
-       (2, 150.00, 1, 'Completed', 'TX003'), (2, 120.00, 2, 'Pending', 'TX004'),
-       (3, 200.00, 1, 'Completed', 'TX005'), (3, 170.00, 2, 'Pending', 'TX006'),
-       (4, 250.00, 1, 'Completed', 'TX007'), (4, 200.00, 2, 'Pending', 'TX008'),
-       (5, 300.00, 1, 'Completed', 'TX009'), (5, 250.00, 2, 'Pending', 'TX010');
+INSERT INTO Orders (user_id, amount, copon_id, status, transaction_id, Date)
+VALUES (1, 100.00, 1, 'Completed', 'TX001','2024-09-07'), (1, 80.00, 2, 'Pending', 'TX002','2024-09-07'),
+       (2, 150.00, 1, 'Completed', 'TX003','2024-09-07'), (2, 120.00, 2, 'Pending', 'TX004','2024-09-07'),
+       (3, 200.00, 1, 'Completed', 'TX005','2024-09-07'), (3, 170.00, 2, 'Pending', 'TX006','2024-09-07'),
+       (4, 250.00, 1, 'Completed', 'TX007','2024-09-07'), (4, 200.00, 2, 'Pending', 'TX008','2024-09-07'),
+       (5, 300.00, 1, 'Completed', 'TX009','2024-09-07'), (5, 250.00, 2, 'Pending', 'TX010','2024-09-07');
 
 
 INSERT INTO Comment (user_id, product_id, comment, status, date, rating)
