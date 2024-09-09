@@ -151,13 +151,14 @@
                                     <li class="menu-icon"><a href="index.html">Home</a>                                      
                                     </li>
 
-                                    <li class="menu-icon"><a href="about.html">About Us</a></li>
-                                       
+                                   
                                     
                                     <li class="menu-icon"><a href="../rania/Templete-Pages/shop.html">Shop</a></li>
                                     <li class="menu-icon"><a href="../Esraa/Categories.html">Categories</a>   </li>                                  
                                         
                                     </li>
+                                    <li class="menu-icon"><a href="about.html">About Us</a></li>
+                                       
                                     
                                     <li class="menu-icon"><a href="../contactUs/contact.html">Contact</a></li>
                                 </ul>
@@ -191,11 +192,13 @@
                                 <div class="ltn__drop-menu user-menu">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="icon-user"></i></a>
+                                            <a href="#" onclick="user()"><i class="icon-user"></i></a>
                                             <ul>
                                                 <li><a href="../bassam/login.html">Sign in</a></li>
                                                 <li><a href="../bassam/register.html">Register</a></li>
-                                                <li><a href="../Esraa/account.html">My Account</a></li>
+                                                <li><a href="#" onclick="user()">My Account</a></li>
+                                                <li><a href="#" onclick="logoutUser()">Log Out</a></li>
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -726,50 +729,6 @@
     </div>
     <!-- FEATURE AREA END -->
 
-    <!-- BRAND LOGO AREA START -->
-    <div class="ltn__brand-logo-area ltn__brand-logo-1 plr--5">
-        <div class="container-fluid  section-bg-1  pt-35 pb-35 ">
-            <div class="row ltn__brand-logo-active">
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/1.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/2.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/3.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/4.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/5.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/1.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="../img/brand-logo/2.png" alt="Brand Logo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- BRAND LOGO AREA END -->
-
     <!-- FOOTER AREA START -->
     <footer class="ltn__footer-area  plr--5">
         <div class="footer-top-area section-bg-5">
@@ -1165,7 +1124,19 @@
     </div>
 
 
-    
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66df36bf50c10f7a00a6551a/1i7burnan';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 
     <!-- All JS Plugins -->
     <script src="../js/plugins.js"></script>

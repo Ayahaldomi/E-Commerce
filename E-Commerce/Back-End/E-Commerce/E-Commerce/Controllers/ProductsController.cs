@@ -315,7 +315,7 @@ namespace E_Commerce.Controllers
         public IActionResult GetProductComments(int productId)
         {
             var productComments = _context.Comments
-                .Where(c => c.ProductId == productId)
+                .Where(c => c.ProductId == productId && c.Status == 1)
                 .Select(c => new rania
                 {
                     Comment1 = c.Comment1,

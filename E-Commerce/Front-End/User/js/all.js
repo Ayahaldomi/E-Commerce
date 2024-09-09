@@ -98,9 +98,20 @@ function isUserLoggedIn() {
     return !!localStorage.getItem('userID'); // If token exists, return true
 }
 
+function user() {
+    debugger;
+    if (!isUserLoggedIn()) {
+        window.location.href = '../bassam/login.html'; // Redirect to login if user isn't logged in
+    } else {
+        window.location.href = '../Esraa/account.html'; // Proceed to checkout if logged in
+    }
+}
+
 // // note: there should be a function in logout logic to remove the token
 function logoutUser() {
     localStorage.removeItem('userID'); // Remove token from localStorage
+    localStorage.removeItem('jwtToken'); // Remove token from localStorage
+    window.location.href = '../Home/index.html';
 }
 
 // Function to load all cart items by user ID

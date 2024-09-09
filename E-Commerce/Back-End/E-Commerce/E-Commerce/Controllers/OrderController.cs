@@ -23,6 +23,7 @@ namespace E_Commerce.Controllers
                 UserId = orderDTO.UserId,
                 Amount = orderDTO.Amount,
                 CoponId = orderDTO.CoponId,
+                Date = DateOnly.FromDateTime(DateTime.Now),
                 Status = "Completed",
                 TransactionId = orderDTO.TransactionId,
             };

@@ -1,5 +1,6 @@
 ﻿using E_Commerce.Dto;
 using E_Commerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,6 @@ namespace E_Commerce.Controllers
             _db = db;
 
         }
-
 
         [HttpGet]
         [Route("GetUserById/{id}")]

@@ -113,16 +113,17 @@
                         <nav>
                             <div class="ltn__main-menu">
                                 <ul>
-                                    <li class="menu-icon"><a href="home.html">Home</a>                                      
+                                    <li class="menu-icon"><a href="../Home/index.html">Home</a>                                      
                                     </li>
 
-                                    <li class="menu-icon"><a href="about.html">About Us</a></li>
-                                       
+                                   
                                     
-                                    <li class="menu-icon"><a href="shop.html">Shop</a></li>
-                                    <li class="menu-icon"><a href="Categories.html">Categories</a>   </li>                                  
+                                    <li class="menu-icon"><a href="../rania/Templete-Pages/shop.html">Shop</a></li>
+                                    <li class="menu-icon"><a href="../Esraa/Categories.html">Categories</a>   </li>                                  
                                         
                                     </li>
+                                    <li class="menu-icon"><a href="../Home/about.html">About Us</a></li>
+                                       
                                     
                                     <li class="menu-icon"><a href="contact.html">Contact</a></li>
                                 </ul>
@@ -147,12 +148,7 @@
                                         </div>
                                     </div>
                                     <div class="header-search-1-form">
-                                        <form id="#234" method="get"  action="#">
-                                            <input type="text" name="search" value="" placeholder="Search here..."/>
-                                            <button type="submit">
-                                                <span><i class="icon-magnifier"></i></span>
-                                            </button>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                             </li>
@@ -161,12 +157,13 @@
                                 <div class="ltn__drop-menu user-menu">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="icon-user"></i></a>
+                                            <a href="#" onclick="user()"><i class="icon-user"></i></a>
                                             <ul>
                                                 <li><a href="../bassam/login.html">Sign in</a></li>
                                                 <li><a href="../bassam/register.html">Register</a></li>
-                                                <li><a href="account.html">My Account</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="#" onclick="user()">My Account</a></li>
+                                                <li><a href="#" onclick="logoutUser()">Log Out</a></li>
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -175,7 +172,6 @@
                             <li>
                                 <!-- header-wishlist -->
                                 <div class="header-wishlist">
-                                    <a href="wishlist.html"><i class="icon-heart"></i></a>
                                 </div>
                             </li>
                             <li>
@@ -184,9 +180,9 @@
                                     <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                         <span class="mini-cart-icon">
                                             <i class="icon-handbag"></i>
-                                            <sup>2</sup>
+                                            <sup id="countofcart"></sup>
                                         </span>
-                                        <h6><span>Your Cart</span> <span class="ltn__secondary-color">$89.25</span></h6>
+                                        <h6><span>Your Cart</span> <span class="ltn__secondary-color" id="subtotalMINICART2"></span></h6>
                                     </a>
                                 </div>
                             </li>

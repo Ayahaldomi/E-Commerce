@@ -10,10 +10,13 @@ namespace E_Commerce.Controllers
     public class CartController : ControllerBase
     {
         private readonly MyDbContext _db;
+        private readonly ILogger<CartController> _logger;
 
-        public CartController(MyDbContext db)
+
+        public CartController(MyDbContext db, ILogger<CartController> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
 

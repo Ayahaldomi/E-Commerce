@@ -119,7 +119,7 @@
                 <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
                     <ul class="nav flex-column">
                         <li class="nav-item ">
-                            <a class="nav-link " href="Add-product.html">
+                            <a class="nav-link " href="Categories_Bassam/Add-product.html">
                                 Add Products
                             </a>
                         </li>
@@ -1202,7 +1202,7 @@ function confirmAction(action, commentId) {
 // Function to approve the comment (display on the user page)
 function approveComment(commentId) {
     // Send a PUT request to the API to approve the comment
-    fetch(`https://localhost:7000/api/Comments/approve${commentId}`, {
+    fetch(`https://localhost:7000/api/Comments/approve/${commentId}`, {
         method: 'PUT'
     })
     .then(response => {

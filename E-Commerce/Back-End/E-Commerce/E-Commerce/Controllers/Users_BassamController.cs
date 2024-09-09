@@ -163,5 +163,43 @@ namespace E_Commerce.Controllers
             return Ok(user);
 
         }
+
+        [HttpPost("registerAdmin")]
+        public ActionResult RegisterAdmin([FromForm] UserDTO model)
+        {
+            // Hash the password
+            byte[] passwordHash, passwordSalt;
+            PasswordHasher.CreatePasswordHash(model.Password, out passwordHash, out passwordSalt);
+
+            var user = new Admin
+            {
+                Name = model.UserName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Password = model.Password,
+                Email = model.Email
+            };
+
+            _db.Admins.Add(user);
+            _db.SaveChanges();
+
+            return Ok(user);
+        }
+        [HttpPost("loginAdmin")]
+        public IActionResult LoginAdmin([FromForm] DTOsLogin model)
+        {
+
+            // Regular email/password login
+            var user = _db.Admins.FirstOrDefault(x => x.Email == model.Email);
+            if (user == null || !PasswordHasher.VerifyPasswordHash(model.Password, user.PasswordHash, user.PasswordSalt))
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            // Retrieve roles and generate JWT token
+            var token = _tokenGenerator.GenerateToken(user.Name);
+
+            return Ok(new { Token = token, userID = user.AdminId });
+        }
     }
 }
