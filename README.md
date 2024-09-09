@@ -40,3 +40,6 @@ Welcome to **Blossom Garden**, an elegant and user-friendly e-commerce platform 
 
 2. Figma link
     https://www.figma.com/design/WGGWHJ0EicrJfQ0bQiwh27/masterPiece?node-id=290-2&node-type=CANVAS&t=7y3stQ0AJOmr7Z2M-0
+
+3. Trello Link
+   https://trello.com/b/3vbd6lVd/e-commerce
