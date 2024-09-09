@@ -116,6 +116,9 @@ if (app.Environment.IsDevelopment())
 // Configure the HTTP request pipeline.
 app.UseAuthentication();
 
+app.UseStaticFiles();
+
+
 app.UseCors("Development");
 
 app.UseHttpsRedirection();

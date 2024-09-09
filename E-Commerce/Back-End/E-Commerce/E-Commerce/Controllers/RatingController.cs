@@ -33,7 +33,7 @@ namespace E_Commerce.Controllers
                 ProductId = ratingDTO.ProductId,
                 Rating = ratingDTO.Rating,
                 Date = DateOnly.FromDateTime(DateTime.Now),  // Capture the rating date
-                Status = 1  // Assuming 1 means active
+                Status = 0  // Assuming 1 means active
             };
 
             _db.Comments.Add(newComment);

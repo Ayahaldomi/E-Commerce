@@ -136,12 +136,13 @@ C:\Users\Orange\Desktop\E-Commerce\E-Commerce\E-Commerce\Back-End\E-Commerce\E-C
 C:\Users\Orange\Desktop\E-Commerce\E-Commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.pdb
 C:\Users\Orange\Desktop\E-Commerce\E-Commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\Orange\Desktop\E-Commerce\E-Commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
-C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\appsettings.json
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.exe
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.deps.json
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.runtimeconfig.json
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.pdb
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
@@ -288,5 +289,5 @@ C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Comme
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\refint\E-Commerce.dll
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.pdb
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
-C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.pdb
 C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
+C:\Users\Orange\Desktop\E-CommerceFlowres\E-commerce\E-Commerce\Back-End\E-Commerce\E-Commerce\bin\Debug\net8.0\E-Commerce.staticwebassets.runtime.json

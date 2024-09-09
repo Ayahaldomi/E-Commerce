@@ -44,7 +44,7 @@ async function NewArrival() {
             <div class="col-12">
                 <div class="ltn__product-item ltn__product-item-4">
                     <div class="product-img">
-                        <a href="product-details.html"><img src="../img/product/2.png" alt="#"></a>
+                        <a href="#" onclick="storeproductid(${element.productId})"><img src="../img/product/2.png" alt="#"></a>
                         
                         <div class="product-badge">
                             <ul>
@@ -73,7 +73,7 @@ async function NewArrival() {
                     </div>
                     <div class="product-info">
                         
-                        <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
+                        <h2 class="product-title"><a href="#" onclick="storeproductid(${element.productId})">${element.name}</a></h2>
                         <div class="product-price">
                             <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
                             <del>${element.priceWithDiscount > 0 ? '$' + element.price : ''}</del>
@@ -144,7 +144,7 @@ async function TopSales() {
             <div class="col-12">
                 <div class="ltn__product-item ltn__product-item-4">
                     <div class="product-img">
-                        <a href="product-details.html"><img src="../img/product/2.png" alt="#"></a>
+                        <a href="#" onclick="storeproductid(${element.productId})"><img src="../img/product/2.png" alt="#"></a>
                         
                         <div class="product-badge">
                             <ul>
@@ -173,7 +173,7 @@ async function TopSales() {
                     </div>
                     <div class="product-info">
                         
-                        <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
+                        <h2 class="product-title"><a href="#" onclick="storeproductid(${element.productId})">${element.name}</a></h2>
                         <div class="product-price">
                             <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
                             <del>${element.priceWithDiscount > 0 ? '$' + element.price : ''}</del>
@@ -244,7 +244,7 @@ async function OffSale() {
             <div class="col-12">
                 <div class="ltn__product-item ltn__product-item-4">
                     <div class="product-img">
-                        <a href="product-details.html"><img src="../img/product/8.png" alt="#"></a>
+                        <a href="#" onclick="storeproductid(${element.productId})"><img src="../img/product/8.png" alt="#"></a>
                         <div class="product-badge">
                             <ul>
                                 <li class="badge-2">${element.priceWithDiscount > 0 ? element.priceWithDiscount + '%' : ''}</li>
@@ -272,7 +272,7 @@ async function OffSale() {
                     </div>
                     <div class="product-info">
                         
-                        <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
+                        <h2 class="product-title"><a href="#" onclick="storeproductid(${element.productId})">${element.name}</a></h2>
                         <div class="product-price">
                             <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
                             <del>${element.priceWithDiscount > 0 ? '$' + element.price : ''}</del>
@@ -346,7 +346,7 @@ async function TopProducts() {
         <div class="col-12">
                     <div class="ltn__product-item ltn__product-item-4">
                         <div class="product-img">
-                            <a href="product-details.html"><img src="../img/product/7.png" alt="#"></a>
+                            <a href="" onclick="storeproductid(${element.productId})"><img src="../img/product/7.png" alt="#"></a>
                             <div class="product-badge">
                                 <ul>
                                     <li class="badge-2">${element.priceWithDiscount > 0 ? element.priceWithDiscount + '%' : ''}</li>
@@ -380,7 +380,7 @@ async function TopProducts() {
 
                                 </ul>
                             </div>
-                            <h2 class="product-title"><a href="product-details.html">${element.name}</a></h2>
+                            <h2 class="product-title"><a href="" onclick="storeproductid(${element.productId})">${element.name}</a></h2>
                             <div class="product-price">
                                 <span>$${element.priceWithDiscount > 0 ? (element.price - (element.price * (element.priceWithDiscount / 100))) : element.price}</span>
                                 <del>${element.priceWithDiscount > 0 ? '$' + element.price : ''}</del>
@@ -461,4 +461,9 @@ function generateStars(rating) {
     }
 
     return starsHTML;
+}
+function storeproductid(productId) {
+    debugger;
+    localStorage.setItem('productId', productId);
+    window.location.href = '../rania/Templete-Pages/product-details.html';
 }

@@ -23,6 +23,7 @@ async function changepassword(event) {
         // Check if the request was successful
         if (response.ok) {
             var result = await response.json();
+            window.location.href = "../Home/index.html";
             alert("Password changed successfully!");
         } else {
             throw new Error("Failed to change password.");

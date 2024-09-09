@@ -1,17 +1,17 @@
-const baseUrl = "https://localhost:7000";
 
+console.log("WTF")
 
+    // // Retrieve the stored data from localStorage
+    // const storedData = localStorage.getItem("userID");
 
-    // Retrieve the stored data from localStorage
-    const storedData = localStorage.getItem("userID");
-
-    // Parse the string to convert it back into an object
-    const parsedData = JSON.parse(storedData);
+    // // Parse the string to convert it back into an object
+    // const parsedData = JSON.parse(storedData);
     
-    // Access the userId
-    const userID = JSON.parse(storedData);
+    // // Access the userId
+    // const userID = JSON.parse(storedData);
 
 async function GetCartItems(userId) {
+    debugger;
     const url = `${baseUrl}/api/Cart/GetAllCartItemsByUserId/${userId}`; 
 
     const request = await fetch(url);
@@ -53,6 +53,7 @@ GetCartItems(userID);
 
 
 async function FillAutomatic() {
+    debugger;
     
     const url = `${baseUrl}/api/UserFillAutomatic/GetUserById/${userID}`;
     const request = await fetch(url);
@@ -62,6 +63,9 @@ async function FillAutomatic() {
     nameInput = document.getElementById("name");
     nameInput.value = data.name;
 
+    emailInput = document.getElementById("email");
+    emailInput.value = data.email;
+
     phoneNumberInput = document.getElementById("phoneNumber");
     phoneNumberInput.value = data.phoneNumber;
 
@@ -69,6 +73,7 @@ async function FillAutomatic() {
     addressInput.value = data.address;
     
 }
+FillAutomatic()
 
 
 // async function PaypalPayment() {
@@ -85,6 +90,10 @@ async function AddOrders() {
     
     var coponId = document.getElementById('coupon-code').value; // Assuming you want the value of the input
     var totalAmount = document.getElementById("orderTotalHidden").value; // Assuming you want the value, not the element
+
+
+    var couponID = localStorage.getItem("CoponID");
+    localStorage.setItem("totalAmountToPAy", totalAmount);
 
     const formData = {
         userId: userID,

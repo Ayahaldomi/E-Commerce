@@ -162,11 +162,11 @@ namespace E_Commerce.Controllers
                     },
 
                     // التحقق من وجود كوبون وجلب معلوماته
-                    Coupon = o.CoponId != null ? new OrderDetailsDto.CouponDto
+                    Coupon = new OrderDetailsDto.CouponDto
                     {
-                        Name = o.Copon.Name,  // Assuming Coupon has Name
-                        Amount = o.Copon.Amount // Assuming Coupon has DiscountAmount
-                    } : null
+                        Name = o.Copon.Name ?? "No Copoun Applied",  // Assuming Coupon has Name
+                        Amount = o.Copon.Amount ?? 0// Assuming Coupon has DiscountAmount
+                    }
                 })
                 .FirstOrDefault();
 

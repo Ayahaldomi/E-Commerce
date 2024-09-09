@@ -1,18 +1,17 @@
-const baseUrl = "https://localhost:7000"; 
 
 // Function to simulate login and store a fake token in localStorage
 
 // note: there should be a function in login logic to store the token
 
 
-    // Retrieve the stored data from localStorage
-const storedData = localStorage.getItem("userID");
+//     // Retrieve the stored data from localStorage
+// const storedData = localStorage.getItem("userID");
 
-// Parse the string to convert it back into an object
-const parsedData = JSON.parse(storedData);
+// // Parse the string to convert it back into an object
+// const parsedData = JSON.parse(storedData);
 
-// Access the userId
-const userID = JSON.parse(storedData);
+// // Access the userId
+// const userID = JSON.parse(storedData);
 
 
 
@@ -61,7 +60,7 @@ async function GetCartItems(userId) {
             let row = `
             <tr>
                 <td class="cart-product-remove">
-                    <button onclick="removeCartItem(${item.userId}, ${item.productId})">x</button>
+                    <button onclick="removeCartItemNAVCART(${item.userId}, ${item.productId})">x</button>
                 </td>
                 <td class="cart-product-image">
                     <a href="product-details.html"><img src="${item.prodcutDTO.image}" alt="${item.prodcutDTO.name}"></a>
@@ -95,9 +94,9 @@ async function GetCartItems(userId) {
 // Function to handle checkout, ensuring the user is logged in
 function proceedToCheckout() {
     if (!isUserLoggedIn()) {
-        window.location.href = '../Login/Register/login&register.html'; // Redirect to login if user isn't logged in
+        window.location.href = '../bassam/login.html'; // Redirect to login if user isn't logged in
     } else {
-        window.location.href = '../checkout/checkout.html'; // Proceed to checkout if logged in
+        window.location.href = 'checkout.html'; // Proceed to checkout if logged in
     }
 }
 
@@ -143,7 +142,7 @@ async function changeQuantity(userId, productId, currentQuantity, action) {
 }
 
 // Function to remove a cart item
-async function removeCartItem(userId, productId) {
+async function removeCartItemNAVCART(userId, productId) {
     const url = `${baseUrl}/api/Cart/UpdateCartItem`;
 
     try {

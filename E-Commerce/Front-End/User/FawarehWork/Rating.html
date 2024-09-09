@@ -181,16 +181,16 @@
                 // Check if all products have been rated
                 if (ratedProducts.size === totalProducts) {
                     document.getElementById('orderList').innerHTML = `<p class="thank-you">Thank you for rating all the products!</p>`;
-                    setTimeout(() => window.location.href = "thankyou.html", 2000); //redirect to the home page ya mohammad
+                    setTimeout(() => window.location.href = "../Home/index.html", 2000); //redirect to the home page ya mohammad
                 }
             } else {
                 const data = await response.json();
                 alert(data.message || "Error submitting rating or rating already exists!");
             }
         }
-
+var userID = localStorage.getItem('userID');
         // Load the order products dynamically for user with ID 5 (you can replace this with the actual userId)
-        loadOrderProducts(1); // Example with userId 5
+        loadOrderProducts(userID); // Example with userId 5
     </script>
 </body>
 </html>

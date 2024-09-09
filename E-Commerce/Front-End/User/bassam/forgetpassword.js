@@ -20,7 +20,7 @@ async function sendemail(event) {
             var result = await response.json();
             alert("Verification code sent successfully! OTP: " + result.otp);
             localStorage.setItem("varificationId",result.userId);
-            window.location.href="formforget.html";
+            window.location.href="OTP.html";
         } else {
             throw new Error("Failed to send verification email.");
         }

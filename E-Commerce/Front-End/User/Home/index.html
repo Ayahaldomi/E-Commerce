@@ -198,8 +198,8 @@
                                         <li>
                                             <a href="#"><i class="icon-user"></i></a>
                                             <ul>
-                                                <li><a href="login.html">Sign in</a></li>
-                                                <li><a href="register.html">Register</a></li>
+                                                <li><a href="../bassam/login.html">Sign in</a></li>
+                                                <li><a href="../bassam/register.html">Register</a></li>
                                                 <li><a href="account.html">My Account</a></li>
                                                 <li><a href="wishlist.html">Wishlist</a></li>
                                             </ul>
@@ -254,8 +254,8 @@
             <span class="ltn__utilize-menu-title">Cart</span>
             <button class="ltn__utilize-close">×</button>
         </div>
-        <div class="mini-cart-product-area ltn__scrollbar">
-            <div class="mini-cart-item clearfix">
+        <div class="mini-cart-product-area ltn__scrollbar" id="miniCart">
+            <!-- <div class="mini-cart-item clearfix">
                 <div class="mini-cart-img">
                     <a href="#"><img src="../img/product/1.png" alt="Image"></a>
                     <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
@@ -294,17 +294,17 @@
                     <h6><a href="#">Pink Flower Tree</a></h6>
                     <span class="mini-cart-quantity">1 x $68.00</span>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="mini-cart-footer">
             <div class="mini-cart-sub-total">
-                <h5>Subtotal: <span>$310.00</span></h5>
+                <h5>Subtotal: <span id="subtotalMINICART"></span></h5>
             </div>
             <div class="btn-wrapper">
-                <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                <a href="../FawarehWork/cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                <a href="#" onclick="proceedToCheckoutNAVCART()" class="theme-btn-2 btn btn-effect-2">Checkout</a>
             </div>
-            <p>Free Shipping on All Orders Over $100!</p>
+            
         </div>
 
     </div>
@@ -427,8 +427,8 @@
                 <span class="ltn__utilize-menu-title">Cart</span>
                 <button class="ltn__utilize-close">×</button>
             </div>
-            <div class="mini-cart-product-area ltn__scrollbar">
-                <div class="mini-cart-item clearfix">
+            <div class="mini-cart-product-area ltn__scrollbar" id="miniCart">
+                <!-- <div class="mini-cart-item clearfix">
                     <div class="mini-cart-img">
                         <a href="#"><img src="../img/product/1.png" alt="Image"></a>
                         <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
@@ -467,11 +467,11 @@
                         <h6><a href="#">Pink Flower Tree</a></h6>
                         <span class="mini-cart-quantity">1 x $68.00</span>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="mini-cart-footer">
                 <div class="mini-cart-sub-total">
-                    <h5>Subtotal: <span>$310.00</span></h5>
+                    <h5>Subtotal: <span id="subtotalMINICART"></span></h5>
                 </div>
                 <div class="btn-wrapper">
                     <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
