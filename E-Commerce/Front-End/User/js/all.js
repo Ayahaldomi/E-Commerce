@@ -151,6 +151,8 @@ async function GetCartItemsNAVCART(userId) {
         });
 
         document.getElementById("subtotalMINICART").innerText = `$${cartSubtotal.toFixed(2)}`;
+        document.getElementById("subtotalMINICART2").innerText = `$${cartSubtotal.toFixed(2)}`;
+
         // document.getElementById("order-total").innerText = `$${(cartSubtotal + 15).toFixed(2)}`; // Assuming $15 shipping fee
 
     } catch (error) {
